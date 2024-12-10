@@ -67,18 +67,30 @@ function Offers() {
 
           {/* Right Side - Image Section */}
           <div className="relative flex justify-center">
-            <div
-              className="absolute inset-0 bg-pink-100 w-[500px] h-[500px] -z-10 rounded-full"
-              style={{ margin: "auto" }}
-            ></div>
-            <Image
-              src="/tortuga-01-b 1.png"
-              alt="Discount Sofa"
-              width={500}
-              height={500}
-              className="object-contain w-[800px] h-[800px]"
-            />
-          </div>
+
+  <div
+
+    className="absolute inset-0 bg-pink-100 rounded-full -z-10"
+
+    style={{ width: "50vw", height: "50vw", maxWidth: "500px", maxHeight: "500px", margin: "auto" }}
+
+  ></div>
+
+  <Image
+
+    src="/Tortuga-01-b 1.png"
+
+    alt="Discount Sofa"
+
+    width={500}
+
+    height={500}
+
+    className="object-contain w-[80vw] h-[80vw] max-w-[800px] max-h-[800px]"
+
+  />
+
+</div>
         </div>
       </div>
     </div>
