@@ -1,10 +1,7 @@
 'use client';
- 
- import Link from "next/link";
- import { FaSearch } from "react-icons/fa";
 
-
-import { FaEnvelope, FaPhoneAlt, FaUser, FaHeart, FaShoppingCart } from 'react-icons/fa'; 
+import Link from "next/link";
+import { FaSearch, FaEnvelope, FaPhoneAlt, FaUser, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import { useState } from 'react';
 
 const TopBar = () => {
@@ -12,12 +9,10 @@ const TopBar = () => {
   const [currencyDropdown, setCurrencyDropdown] = useState(false);
 
   return (
-    <div className="bg-violet-700 text-white py-2 text-sm flex items-center justify-center">
-   
-      <div className="w-full max-w-[1200px] flex items-center justify-between px-4">
-      
-        <div className="flex items-center justify-center gap-6 w-full sm:w-auto">
-        
+    <div className="bg-violet-700 text-white py-2 text-sm flex flex-wrap items-center justify-center">
+      <div className="w-full max-w-[1200px] flex flex-wrap items-center justify-between px-4">
+        {/* Contact Info */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
           <a
             href="mailto:mhhasanul@gmail.com"
             className="flex items-center gap-2 hover:text-gray-200"
@@ -25,7 +20,6 @@ const TopBar = () => {
             <FaEnvelope />
             <span>mhhasanul@gmail.com</span>
           </a>
-      
           <a
             href="tel:1234567890"
             className="flex items-center gap-2 hover:text-gray-200"
@@ -35,9 +29,9 @@ const TopBar = () => {
           </a>
         </div>
 
-   
-        <div className="flex items-center justify-center gap-6 w-full sm:w-auto">
-        
+        {/* Utilities */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+          {/* Language Selector */}
           <div
             className="relative cursor-pointer flex items-center gap-1"
             onMouseEnter={() => setLanguageDropdown(true)}
@@ -72,7 +66,7 @@ const TopBar = () => {
             )}
           </div>
 
-          {/* Login */}
+          {/* Links */}
           <a href="/login" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
             <FaUser />
             <span>Login</span>
@@ -80,14 +74,10 @@ const TopBar = () => {
           <a href="/signup" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
             <span>Signup</span>
           </a>
-
-          {/* Wishlist */}
           <a href="/wishlist" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
             <FaHeart />
             <span>Wishlist</span>
           </a>
-
-          {/* Cart */}
           <a href="/cart" className="cursor-pointer hover:text-gray-200">
             <FaShoppingCart />
           </a>
@@ -99,43 +89,59 @@ const TopBar = () => {
 
 export default TopBar;
 
-
-// Header
 export const Header = () => {
-    return (
-        <div className='flex flex-col md:flex-row w-full   md:w-[1170px] mt-[30px] px-4 md:px-16 items-center max-w-screen-xl mx-auto  '>
-            <h2 className='font-bold mr-16  font-inter text-[#000000] text-center md:text-left  text-3xl md:text-[24px]  md:w-auto'>
-                Hekto
-            </h2>
-            
-            <ul className='flex flex-col md:flex-row w-full md:w-auto justify-center md:justify-between gap-4 md:gap-[48px] text-[#000000]'>
-                <Link href={"/"} className='font-poppins text-[16px] text-[#FB2E86] font-bold text-center md:text-left w-[48px] h-[24px] '>
-                <select name='' id='' className='  text-center mr-10 '>
-                <option value=""> Home</option>
-            </select>
-                </Link>
-                <Link href={"/"} className='font-poppins text-[16px] font-bold text-center md:text-left w-[66px] h-[24px] '>Pages</Link>
-                <Link href={"/"} className='font-poppins text-[16px] font-bold text-center md:text-left w-[48px] h-[24px] '>Product</Link>
-                <Link href={"/"} className='font-poppins text-[16px] font-bold text-center md:text-left w-[61px] h-[24px] '>Blog</Link>
-                <Link href={"/"} className='font-poppins text-[16px] font-bold text-center md:text-left w-[61px] h-[24px] '>Shop</Link>
-                <Link href={"/"} className='font-poppins text-[16px] font-bold text-center md:text-left w-[61px] h-[24px] '>Contact</Link>
+  return (
+    <div className="flex flex-col md:flex-row w-full mt-6 px-4 md:px-16 items-center max-w-screen-xl mx-auto">
+      {/* Logo */}
+      <h2 className="font-bold text-black text-center md:text-left text-2xl md:text-xl font-inter md:w-auto">
+        Hekto
+      </h2>
 
-            </ul>
+      {/* Navigation */}
+      <ul className="flex flex-wrap justify-center md:justify-between gap-4 md:gap-8 mt-4 md:mt-0 w-full md:w-auto text-black">
+        <li>
+          <Link href="/">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/pages">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Pages</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/product">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Product</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Blog</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/shop">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Shop</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact">
+            <a className="font-poppins text-lg font-bold hover:text-gray-600">Contact</a>
+          </Link>
+        </li>
+      </ul>
 
-            <div className='flex gap-3 mt-4 md:mt-0'>
-                <button className='flex items-center w-full ml-14 mr-11 md:w-[180px] h-[38px] rounded-[4px] pl-[20px] pt-[7px] pb-[7px] pr-[12px] gap-[7px] bg-white'>
-                    <input 
-                        type='text' 
-                        className='font-poppins text-[13px] font-normal w-[130px] h-[18px] opacity-[50%] border-2 border-red-500 text-[#000000]' />
-                        <div
-                        className='w-[20px] h-[16px]'>
-                           <FaSearch   />
-                        </div>
-                   
-                </button>
-                
-               
-            </div>
+      {/* Search */}
+      <div className="flex mt-4 md:mt-0">
+        <div className="flex items-center bg-white rounded shadow px-3 py-1">
+          <input
+            type="text"
+            className="flex-grow text-sm text-gray-700 focus:outline-none"
+            placeholder="Search"
+          />
+          <FaSearch className="text-gray-500" />
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
