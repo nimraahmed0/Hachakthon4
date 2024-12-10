@@ -15,7 +15,7 @@ function LatestBlog() {
     },
     {
       id: 2,
-      img: "/frame 3.png",
+      img: "/Frame 3.png",
       author: "Surfauxion",
       date: "21 August, 2020",
       title: "Top Essential Trends in 2020",
@@ -24,7 +24,7 @@ function LatestBlog() {
     },
     {
       id: 3,
-      img: "/frame 4.png",
+      img: "/Frame 4.png",
       author: "Saber Ali",
       date: "21 August, 2020",
       title: "Top Essential Trends in 2020",
