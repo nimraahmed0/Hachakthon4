@@ -78,7 +78,7 @@ function Offers() {
 
   <Image
 
-    src="/Tortuga-01-b 1.png"
+    src="/tortuga-01-b 1.png"
 
     alt="Discount Sofa"
 
